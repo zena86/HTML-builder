@@ -1,0 +1,14 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2021": true
+    },
+    "extends": "airbnb-base/legacy",
+    "parserOptions": {
+        "ecmaVersion": 12
+    },
+    "ignorePatterns": [ "**/secret-folder/*.js", "test-js.js"],
+    "rules": {
+    }
+}
