@@ -1,14 +1,26 @@
 {
     "env": {
-        "browser": true,
+        "node": true,
         "commonjs": true,
         "es2021": true
     },
-    "extends": "airbnb-base/legacy",
+    "extends": "eslint:recommended",
     "parserOptions": {
         "ecmaVersion": 12
     },
     "ignorePatterns": [ "**/secret-folder/*.js", "test-js.js"],
     "rules": {
+        "indent": [
+            "error",
+            2
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ]
     }
 }
