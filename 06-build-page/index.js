@@ -122,7 +122,7 @@ async function build() {
   }());
 
   // Создать файл html
-  function analizeComponents() {
+  async function analizeComponents() {
     const componentsPath = path.join(__dirname, 'components');
     fs.promises
       .readdir(componentsPath, { withFileTypes: true })
@@ -145,12 +145,12 @@ async function build() {
       });
   }
 
-  function createHtmlBundle() {
+  async function createHtmlBundle() {
     const sourceHtmlPath = path.join(__dirname, 'template.html');
     const readableHtmlStream = fs.createReadStream(sourceHtmlPath);
-    readableHtmlStream.on('data', (chunk) => {
+    readableHtmlStream.on('data', async (chunk) => {
       tmpHtml = chunk.toString();
-      analizeComponents();
+      await analizeComponents();
     });
   }
   createHtmlBundle();
